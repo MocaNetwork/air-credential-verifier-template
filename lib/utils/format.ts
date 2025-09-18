@@ -16,18 +16,3 @@ export const formatAddress = (address: string) => {
 export const formatKey = (key: string) => {
   return key.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 };
-
-export const getNameFromAccessToken = (accessToken: string | null) => {
-  try {
-    const name: string | null = accessToken
-      ? jose.decodeJwt(accessToken)["name"] as string
-      : null;
-
-    if (name && isAddress(name)) {
-      return formatAddress(name);
-    }
-    return name;
-  } catch {
-    return null;
-  }
-};

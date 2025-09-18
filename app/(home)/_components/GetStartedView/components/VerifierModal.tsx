@@ -1,12 +1,12 @@
 "use client";
 
+import AirkitLogo from "@/app/assets/airkit.svg";
 import CloseIcon from "@/app/assets/close.svg";
 import CopyIcon from "@/app/assets/copy.svg";
 import { Button } from "@/components/ui/button";
 import { env } from "@/lib/env";
 import { useAirkit } from "@/lib/hooks/useAirkit";
 import axios from "axios";
-import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -73,7 +73,7 @@ export function VerifierModal() {
 
           <div className="px-8 pb-8 rounded-b-3xl flex flex-col items-center gap-4">
             <div className="rounded-xl bg-white grid place-items-center overflow-hidden">
-              <Image alt="AIR Shop" src="/airkit.svg" width={48} height={48} />
+              <AirkitLogo className="w-12 h-12" />
             </div>
 
             <h3 className="text-center text-text-on-colour text-lg font-semibold">
@@ -104,13 +104,7 @@ export function VerifierModal() {
         <div className="w-[345px] flex flex-col">
           <div className="px-8 pt-8 pb-8 bg-container-primary rounded-[32px] flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-3 w-full">
-              <Image
-                src="/airkit.svg"
-                alt="Logo"
-                className="bg-white rounded-xl"
-                width={48}
-                height={48}
-              />
+              <AirkitLogo className="w-12 h-12 bg-white rounded-xl" />
               <p className="text-center text-text-on-colour text-lg font-semibold leading-snug tracking-tight max-w-[300px]">
                 To be eligible you need to verify you have traded over $1000 on
                 DEX
