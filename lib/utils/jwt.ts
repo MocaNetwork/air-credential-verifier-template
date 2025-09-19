@@ -9,11 +9,8 @@ export interface JwtPayload {
 }
 
 export const signJwt = async (payload: JwtPayload): Promise<string> => {
-  const privateKeyPem = env.PARTNER_PRIVATE_KEY;
-  const formattedKey = privateKeyPem.replace(/\\n/g, "\n");
-
   const privateKey = await jose.importPKCS8(
-    formattedKey,
+    withPrivateKeyHeaders(env.PARTNER_PRIVATE_KEY),
     env.SIGNING_ALGORITHM
   );
 
@@ -27,4 +24,10 @@ export const signJwt = async (payload: JwtPayload): Promise<string> => {
     .sign(privateKey);
 
   return jwt;
+};
+
+export const withPrivateKeyHeaders = (privateKey: string): string => {
+  return privateKey
+    ? `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----`
+    : privateKey;
 };
