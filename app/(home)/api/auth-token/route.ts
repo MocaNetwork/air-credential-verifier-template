@@ -1,5 +1,5 @@
-import { signJwt } from "@/lib/utils/jwt";
 import { env } from "@/lib/env";
+import { signJwt } from "@/lib/utils/jwt";
 import { NextResponse } from "next/server";
 
 export async function GET() {
