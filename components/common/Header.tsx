@@ -8,6 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { formatAddress } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import { useAirkit } from "../../lib/hooks/useAirkit";
 import { Button } from "../ui/button";
@@ -23,13 +24,19 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between mx-auto">
         <Link
           href="/"
           className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
         >
-          <Logo className="ml-4 mt-4" />
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={28}
+            height={28}
+            className={`h-7 w-auto dark:invert`}
+          />
         </Link>
         {isLoggedIn && (
           <Dialog>
