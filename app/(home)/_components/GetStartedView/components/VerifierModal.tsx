@@ -102,7 +102,6 @@ export function VerifierModal() {
         <div className="w-[345px] flex flex-col">
           <div className="px-8 pt-8 pb-8 bg-container-primary rounded-[32px] flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-3 w-full">
-              <AirkitLogo className="w-12 h-12 bg-white rounded-xl" />
               <p className="text-center text-text-on-colour text-lg font-semibold leading-snug tracking-tight max-w-[300px]">
                 {env.NEXT_PUBLIC_SITE_DESCRIPTION}
               </p>
