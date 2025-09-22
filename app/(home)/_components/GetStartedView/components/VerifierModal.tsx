@@ -52,9 +52,7 @@ export function VerifierModal() {
     }
   };
 
-  const buttonText = isInitialized
-    ? "Understood and continue"
-    : "Initializing...";
+  const buttonText = isInitialized ? "Continue" : "Initializing...";
 
   return (
     <>
@@ -106,8 +104,7 @@ export function VerifierModal() {
             <div className="flex flex-col items-center gap-3 w-full">
               <AirkitLogo className="w-12 h-12 bg-white rounded-xl" />
               <p className="text-center text-text-on-colour text-lg font-semibold leading-snug tracking-tight max-w-[300px]">
-                To be eligible you need to verify you have traded over $1000 on
-                DEX
+                {env.NEXT_PUBLIC_SITE_DESCRIPTION}
               </p>
             </div>
             <Button

@@ -10,7 +10,6 @@ export const env = createEnv({
   },
   client: {
     NEXT_PUBLIC_PARTNER_ID: z.string(),
-    NEXT_PUBLIC_VERIFIER_DID: z.string(),
     NEXT_PUBLIC_VERIFIER_PROGRAM_ID: z.string(),
     NEXT_PUBLIC_ISSUER_URL: z.url(),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string(),
@@ -20,7 +19,6 @@ export const env = createEnv({
   },
   runtimeEnv: {
     NEXT_PUBLIC_PARTNER_ID: process.env.NEXT_PUBLIC_PARTNER_ID,
-    NEXT_PUBLIC_VERIFIER_DID: process.env.NEXT_PUBLIC_VERIFIER_DID,
     NEXT_PUBLIC_VERIFIER_PROGRAM_ID:
       process.env.NEXT_PUBLIC_VERIFIER_PROGRAM_ID,
     NEXT_PUBLIC_ISSUER_URL: process.env.NEXT_PUBLIC_ISSUER_URL,

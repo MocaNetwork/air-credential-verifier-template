@@ -30,18 +30,10 @@ export const DebuggingInfo = () => {
               />
             </div>
             <div className="space-y-1">
-              <Label className="text-xs">Verifier DID</Label>
+              <Label className="text-xs">Issuer URL</Label>
               <Input
                 readOnly
-                value={env.NEXT_PUBLIC_VERIFIER_DID}
-                className="font-mono text-xs h-7"
-              />
-            </div>
-            <div className="space-y-1">
-              <Label className="text-xs">Verifier Program ID</Label>
-              <Input
-                readOnly
-                value={env.NEXT_PUBLIC_VERIFIER_PROGRAM_ID}
+                value={env.NEXT_PUBLIC_ISSUER_URL}
                 className="font-mono text-xs h-7"
               />
             </div>
