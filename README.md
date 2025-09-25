@@ -55,10 +55,9 @@ Create a `.env.local` file and configure the following variables:
 
 #### Client-side Variables (`NEXT_PUBLIC_*`)
 - `NEXT_PUBLIC_PARTNER_ID`: Your partner ID.
-- `NEXT_PUBLIC_VERIFIER_DID`: Your verifier DID.
 - `NEXT_PUBLIC_VERIFIER_PROGRAM_ID`: Verification program ID.
-- `NEXT_PUBLIC_HEADLINE`: Header text displayed on the page.
-- `NEXT_PUBLIC_APP_NAME`: Application name.
+- `NEXT_PUBLIC_SITE_NAME`: Site/application name.
+- `NEXT_PUBLIC_SITE_DESCRIPTION`: Site description text.
 - `NEXT_PUBLIC_BUILD_ENV`: Build environment (`production`, `sandbox`, `staging`).
 - `NEXT_PUBLIC_THEME`: The theme of the app (`light`, `dark`, `system`)
 
