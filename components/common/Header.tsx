@@ -1,6 +1,5 @@
 "use client";
 
-import Logo from "@/app/assets/logo.svg";
 import {
   Dialog,
   DialogContent,
@@ -35,7 +34,7 @@ export const Header = () => {
             alt="Logo"
             width={28}
             height={28}
-            className={`h-7 w-auto dark:invert`}
+            className={`h-7 w-auto dark:invert ml-4`}
           />
         </Link>
         {isLoggedIn && (

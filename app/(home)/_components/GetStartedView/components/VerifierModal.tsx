@@ -1,12 +1,12 @@
 "use client";
 
-import AirkitLogo from "@/app/assets/airkit.svg";
-import CloseIcon from "@/app/assets/close.svg";
 import CopyIcon from "@/app/assets/copy.svg";
 import { Button } from "@/components/ui/button";
 import { env } from "@/lib/env";
 import { useAirkit } from "@/lib/hooks/useAirkit";
 import axios from "axios";
+import { Loader2 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -52,72 +52,74 @@ export function VerifierModal() {
     }
   };
 
-  const buttonText = isInitialized ? "Continue" : "Initializing...";
+  const buttonText = isInitialized
+    ? status === "loading"
+      ? "Verifying..."
+      : "Continue"
+    : "Initializing...";
+  const isLoading = status === "loading" || !isInitialized;
 
   return (
-    <>
+    <div className="container max-w-3xl">
       {status === "success" ? (
-        <div className="w-full max-w-[462px] inline-flex flex-col rounded-3xl bg-container-primary text-white">
-          <div className="h-10 px-4 pt-4 rounded-t-3xl flex items-center justify-end">
-            <button
-              type="button"
-              aria-label="Close"
-              className="grid place-items-center w-6 h-6 rounded hover:bg-white/10"
-              onClick={() => setStatus("initial")}
-            >
-              <CloseIcon />
-            </button>
-          </div>
+        <div className="flex justify-center">
+          <div className="w-full max-w-[462px] inline-flex flex-col rounded-3xl text-primary-foreground">
+            <div className="px-8 pb-8 rounded-b-3xl flex flex-col items-center gap-4">
+              <h3 className="text-center text-secondary-foreground text-lg font-semibold">
+                Use this code to sign up and get your $20 trading credit
+              </h3>
 
-          <div className="px-8 pb-8 rounded-b-3xl flex flex-col items-center gap-4">
-            <div className="rounded-xl bg-white grid place-items-center overflow-hidden">
-              <AirkitLogo className="w-12 h-12" />
-            </div>
+              <div className="p-4 rounded-3xl bg-primary/10 text-secondary-foreground inline-flex items-center gap-2">
+                <span className="font-medium leading-snug">1234567890</span>
+                <button
+                  type="button"
+                  aria-label="Copy code"
+                  className="grid place-items-center w-5 h-5 text-primary/80 hover:text-primary cursor-pointer"
+                  onClick={() => {
+                    navigator.clipboard.writeText("1234567890");
+                    toast.success("Code copied to clipboard");
+                  }}
+                >
+                  <CopyIcon />
+                </button>
+              </div>
 
-            <h3 className="text-center text-text-on-colour text-lg font-semibold">
-              Use this code to sign up and get your $20 trading credit
-            </h3>
-
-            <div className="p-4 rounded-3xl bg-zinc-100 text-black inline-flex items-center gap-2">
-              <span className="font-medium leading-snug">1234567890</span>
-              <button
-                type="button"
-                aria-label="Copy code"
-                className="grid place-items-center w-5 h-5 text-black/80 hover:text-black cursor-pointer"
-                onClick={() => {
-                  navigator.clipboard.writeText("1234567890");
-                  toast.success("Code copied to clipboard");
-                }}
+              <Link
+                href={env.NEXT_PUBLIC_RETURN_URL}
+                target={
+                  env.NEXT_PUBLIC_RETURN_URL.startsWith("http")
+                    ? "_blank"
+                    : undefined
+                }
               >
-                <CopyIcon />
-              </button>
+                <Button type="button" className="w-full" size="lg">
+                  {`Back to ${env.NEXT_PUBLIC_RETURN_SITE_NAME}`}
+                </Button>
+              </Link>
             </div>
-
-            <Button type="button" className="w-full" size="xl" variant="brand">
-              {`Back to ${env.NEXT_PUBLIC_SITE_NAME}`}
-            </Button>
           </div>
         </div>
       ) : (
-        <div className="w-[345px] flex flex-col">
-          <div className="px-8 pt-8 pb-8 bg-container-primary rounded-[32px] flex flex-col items-center gap-4">
+        <div className="flex flex-col w-full">
+          <div className="px-8 pt-8 pb-8 rounded-3xl flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-3 w-full">
-              <p className="text-center text-text-on-colour text-lg font-semibold leading-snug tracking-tight max-w-[300px]">
+              <p className="text-center text-secondary-foreground text-lg font-semibold leading-snug tracking-tight max-w-[300px]">
                 {env.NEXT_PUBLIC_SITE_DESCRIPTION}
               </p>
             </div>
+
             <Button
-              className="w-full"
-              variant="brand"
-              size="xl"
+              size="lg"
               onClick={onContinue}
-              disabled={!isInitialized || status === "loading"}
+              disabled={isLoading}
+              className="min-w-[200px]"
             >
+              {isLoading && <Loader2 className="w-4 h-4 animate-spin" />}
               {buttonText}
             </Button>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
