@@ -1,6 +1,5 @@
 "use client";
 
-import Logo from "@/app/assets/logo.svg";
 import {
   Dialog,
   DialogContent,

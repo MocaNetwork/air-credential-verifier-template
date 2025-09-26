@@ -1,9 +1,7 @@
 "use client";
 
-import AirkitLogo from "@/app/assets/airkit.svg";
 import CopyIcon from "@/app/assets/copy.svg";
 import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
 import { env } from "@/lib/env";
 import { useAirkit } from "@/lib/hooks/useAirkit";
 import axios from "axios";
@@ -67,10 +65,6 @@ export function VerifierModal() {
         <div className="flex justify-center">
           <div className="w-full max-w-[462px] inline-flex flex-col rounded-3xl text-primary-foreground">
             <div className="px-8 pb-8 rounded-b-3xl flex flex-col items-center gap-4">
-              <div className="rounded-xl bg-primary/10 grid place-items-center overflow-hidden invert dark:invert-0">
-                <AirkitLogo className="w-12 h-12" />
-              </div>
-
               <h3 className="text-center text-secondary-foreground text-lg font-semibold">
                 Use this code to sign up and get your $20 trading credit
               </h3>
