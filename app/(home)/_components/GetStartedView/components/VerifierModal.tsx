@@ -1,7 +1,6 @@
 "use client";
 
 import AirkitLogo from "@/app/assets/airkit.svg";
-import CloseIcon from "@/app/assets/close.svg";
 import CopyIcon from "@/app/assets/copy.svg";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
@@ -9,6 +8,7 @@ import { env } from "@/lib/env";
 import { useAirkit } from "@/lib/hooks/useAirkit";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -65,20 +65,9 @@ export function VerifierModal() {
     <div className="container max-w-3xl">
       {status === "success" ? (
         <div className="flex justify-center">
-          <div className="w-full max-w-[462px] inline-flex flex-col rounded-3xl bg-secondary text-primary-foreground">
-            <div className="h-10 px-4 pt-4 rounded-t-3xl flex items-center justify-end">
-              <button
-                type="button"
-                aria-label="Close"
-                className="grid place-items-center w-6 h-6 rounded hover:bg-primary/10 text-secondary-foreground cursor-pointer"
-                onClick={() => setStatus("initial")}
-              >
-                <CloseIcon />
-              </button>
-            </div>
-
+          <div className="w-full max-w-[462px] inline-flex flex-col rounded-3xl text-primary-foreground">
             <div className="px-8 pb-8 rounded-b-3xl flex flex-col items-center gap-4">
-              <div className="rounded-xl bg-primary/10 grid place-items-center overflow-hidden">
+              <div className="rounded-xl bg-primary/10 grid place-items-center overflow-hidden invert dark:invert-0">
                 <AirkitLogo className="w-12 h-12" />
               </div>
 
@@ -101,9 +90,18 @@ export function VerifierModal() {
                 </button>
               </div>
 
-              <Button type="button" className="w-full" size="lg">
-                {`Back to ${env.NEXT_PUBLIC_SITE_NAME}`}
-              </Button>
+              <Link
+                href={env.NEXT_PUBLIC_RETURN_URL}
+                target={
+                  env.NEXT_PUBLIC_RETURN_URL.startsWith("http")
+                    ? "_blank"
+                    : undefined
+                }
+              >
+                <Button type="button" className="w-full" size="lg">
+                  {`Back to ${env.NEXT_PUBLIC_RETURN_SITE_NAME}`}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
