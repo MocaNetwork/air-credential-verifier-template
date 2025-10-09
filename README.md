@@ -14,8 +14,8 @@ A modern template for verifying verifiable credentials using AIR Kit, with a cus
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/MocaNetwork/air-credential-verifier-example.git
-   cd air-credential-verifier-example
+   git clone https://github.com/MocaNetwork/air-credential-verifier-template.git
+   cd air-credential-verifier-template
    ```
 
 2. Install dependencies:
@@ -123,7 +123,7 @@ npm start
 
 Click the button below to deploy directly to Vercel:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MocaNetwork/air-credential-verifier-example&env=NEXT_PUBLIC_PARTNER_ID,NEXT_PUBLIC_VERIFIER_PROGRAM_ID,NEXT_PUBLIC_ISSUER_URL,NEXT_PUBLIC_SITE_NAME,NEXT_PUBLIC_SITE_DESCRIPTION,NEXT_PUBLIC_BUILD_ENV,NEXT_PUBLIC_THEME,PARTNER_PRIVATE_KEY,SIGNING_ALGORITHM&envDescription=Configure%20your%20AIR%20Kit%20credentials%20and%20application%20settings&envLink=https://github.com/MocaNetwork/air-credential-verifier-example/blob/main/README.md)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MocaNetwork/air-credential-verifier-template&env=NEXT_PUBLIC_PARTNER_ID,NEXT_PUBLIC_VERIFIER_PROGRAM_ID,NEXT_PUBLIC_ISSUER_URL,NEXT_PUBLIC_SITE_NAME,NEXT_PUBLIC_SITE_DESCRIPTION,NEXT_PUBLIC_BUILD_ENV,NEXT_PUBLIC_THEME,PARTNER_PRIVATE_KEY,SIGNING_ALGORITHM&envDescription=Configure%20your%20AIR%20Kit%20credentials%20and%20application%20settings&envLink=https://github.com/MocaNetwork/air-credential-verifier-template/blob/main/README.md)
 
 ### Customizing the UI
 
