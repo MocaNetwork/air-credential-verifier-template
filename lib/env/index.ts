@@ -15,7 +15,7 @@ export const env = createEnv({
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string(),
     NEXT_PUBLIC_SITE_NAME: z.string(),
     NEXT_PUBLIC_RETURN_SITE_NAME: z.string(),
-    NEXT_PUBLIC_RETURN_URL: z.url().default("/"),
+    NEXT_PUBLIC_RETURN_URL: z.string().default("/"),
     NEXT_PUBLIC_BUILD_ENV: z.enum(BUILD_ENV),
     NEXT_PUBLIC_THEME: z.enum(["light", "dark", "system"]),
   },
