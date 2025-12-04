@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@mocanetwork/airkit':
-        specifier: 1.6.0
-        version: 1.6.0
+        specifier: 1.7.0
+        version: 1.7.0
       '@radix-ui/react-dialog':
         specifier: 1.1.4
         version: 1.1.4(@types/react-dom@19.1.9(@types/react@19.1.13))(@types/react@19.1.13)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -905,8 +905,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@mocanetwork/airkit@1.6.0':
-    resolution: {integrity: sha512-IKrxdDB0WFChBFJxgO3RB+zPb1dZxSapH9VQNM+pKgDawRGAj0Sm1R9kLdrUFByM4u8ifVTFGYdFXWbGlrWeYg==}
+  '@mocanetwork/airkit@1.7.0':
+    resolution: {integrity: sha512-pdhdwdvqHqeRFBWHVKD+fZUozfc4mfnV2zeM6uJGmw+97rM3fE8Tql9Yp/miCy1zf4OZAnNGu08IqsDA0b97pg==}
     engines: {node: '>=18.x', npm: '>=9.x'}
 
   '@napi-rs/wasm-runtime@0.2.12':
@@ -4378,7 +4378,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mocanetwork/airkit@1.6.0':
+  '@mocanetwork/airkit@1.7.0':
     dependencies:
       fast-deep-equal: 3.1.3
       loglevel: 1.9.2
